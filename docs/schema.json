@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProjectManagementDatabaseSchema",
+  "description": "Database schema definition for Project Management Kanban board",
+  "type": "object",
+  "tables": {
+    "users": {
+      "columns": {
+        "id": { "type": "string", "primary_key": true },
+        "username": { "type": "string", "unique": true },
+        "password_hash": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "boards": {
+      "columns": {
+        "id": { "type": "string", "primary_key": true },
+        "user_id": { "type": "string", "foreign_key": "users.id" },
+        "title": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "columns": {
+      "columns": {
+        "id": { "type": "string", "primary_key": true },
+        "board_id": { "type": "string", "foreign_key": "boards.id" },
+        "title": { "type": "string" },
+        "position": { "type": "integer" }
+      }
+    },
+    "cards": {
+      "columns": {
+        "id": { "type": "string", "primary_key": true },
+        "column_id": { "type": "string", "foreign_key": "columns.id" },
+        "title": { "type": "string" },
+        "details": { "type": "string" },
+        "position": { "type": "integer" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}
