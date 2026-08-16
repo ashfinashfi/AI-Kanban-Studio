@@ -1,4 +1,4 @@
-# Full-Stack AI-Powered Kanban App: Beginner Tutorial
+# Full-Stack AI-Powered Kanban App
 
 Welcome! This tutorial will walk you step-by-step through how this **Full-Stack AI-Powered Project Management Kanban Application** was built, packaged, and tested.
 
