@@ -366,3 +366,8 @@ While our MVP satisfies all functional, architectural, and business requirements
 ### 5. Multi-Board & Workspace Management
 - **Current State**: Restricted to 1 Kanban board per signed-in user for MVP simplicity.
 - **Improvement**: Add a board selector navigation bar allowing users to create, rename, archive, and switch between multiple project boards per user workspace.
+
+  
+## 📜 License
+
+MIT License. Free for open-source use and modification.
