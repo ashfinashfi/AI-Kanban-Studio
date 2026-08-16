@@ -264,7 +264,86 @@ CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 ---
 
-## 4. Five Code Improvement Suggestions (Self-Review)
+## 4. How to Run, Stop, and Manage the Application
+
+### Environment Configuration
+Before running the application, make sure `backend/.env` contains your OpenRouter API Key:
+```env
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+```
+
+### Starting the Application
+
+The startup scripts build the Docker image and launch the container on port 8000:
+
+- **Windows PowerShell**:
+  ```powershell
+  .\scripts\start.ps1
+  ```
+- **Windows Command Prompt (cmd.exe)**:
+  ```cmd
+  scripts\start.bat
+  ```
+- **Mac / Linux Terminal**:
+  ```bash
+  chmod +x scripts/start.sh
+  ./scripts/start.sh
+  ```
+
+Once started, open your browser and navigate to:
+**`http://localhost:8000`**
+
+- **Sign In Username**: `user`
+- **Sign In Password**: `password`
+
+---
+
+### Stopping the Application
+
+To cleanly stop and remove the container:
+
+- **Windows PowerShell**:
+  ```powershell
+  .\scripts\stop.ps1
+  ```
+- **Windows Command Prompt (cmd.exe)**:
+  ```cmd
+  scripts\stop.bat
+  ```
+- **Mac / Linux Terminal**:
+  ```bash
+  ./scripts/stop.sh
+  ```
+- **Direct Docker CLI Command**:
+  ```bash
+  docker stop pm-kanban-app
+  ```
+
+---
+
+### Running Automated Test Suites
+
+To execute unit and integration tests:
+
+- **Back-End Pytest Suite**:
+  ```bash
+  cd backend
+  uv run pytest
+  ```
+- **Front-End Vitest Unit Suite**:
+  ```bash
+  cd frontend
+  npm run test:unit
+  ```
+- **Front-End Playwright E2E Suite**:
+  ```bash
+  cd frontend
+  npm run test:e2e
+  ```
+
+---
+
+## 5. Five Code Improvement Suggestions (Self-Review)
 
 While our MVP satisfies all functional, architectural, and business requirements, here are five high-impact enhancements for future production iterations:
 
