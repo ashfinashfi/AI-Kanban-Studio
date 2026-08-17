@@ -368,6 +368,3 @@ While our MVP satisfies all functional, architectural, and business requirements
 - **Improvement**: Add a board selector navigation bar allowing users to create, rename, archive, and switch between multiple project boards per user workspace.
 
   
-## 📜 License
-
-MIT License. Free for open-source use and modification.
